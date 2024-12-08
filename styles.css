@@ -1,0 +1,318 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e1e;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #121212;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffa500;
+    display: flex;
+    align-items: center;
+}
+
+header .logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffa500;
+    background-color: rgba(255, 165, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Menu Icon (for mobile) */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222 url('hero-bg.jpg') no-repeat center/cover;
+    text-align: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.hero .hero-content {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #ffa500;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #ffa500;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #ff8c00;
+}
+
+.hero .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero .hero-image img {
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Emoji Animation */
+#emoji {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: #ffa500;
+}
+
+.service-card p {
+    color: #fff;
+}
+
+.service-card:hover {
+    background-color: #444;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.portfolio .projects {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project p {
+    color: #fff;
+}
+
+/* Blog Section */
+.blog {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.blog .blog-posts {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.post {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.post h3 {
+    color: #ffa500;
+}
+
+.post p {
+    color: #fff;
+}
+
+/* Smoke Effect */
+.smoke-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    pointer-events: none;
+    animation: smokeAnimation 2s infinite;
+}
+
+@keyframes smokeAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 10px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #121212;
+    }
+
+    header nav ul li a {
+        padding: 10px;
+    }
+
+    header nav ul li a:hover {
+        background-color: rgba(255, 165, 0, 0.1);
+    }
+
+    .hero .hero-image img {
+        width: 100%;
+    }
+}
+/* Smoke Effect Style */
+.smoke {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 165, 0, 0.4);
+    border-radius: 50%;
+    animation: smokeAnimation 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes smokeAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
